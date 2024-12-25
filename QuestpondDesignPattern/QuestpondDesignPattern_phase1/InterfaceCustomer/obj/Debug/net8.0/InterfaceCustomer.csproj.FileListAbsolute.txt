@@ -1,0 +1,12 @@
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\bin\Debug\net8.0\InterfaceCustomer.deps.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\bin\Debug\net8.0\InterfaceCustomer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\bin\Debug\net8.0\InterfaceCustomer.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.AssemblyInfoInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.AssemblyInfo.cs
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.csproj.CoreCompileInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.sourcelink.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\refint\InterfaceCustomer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\InterfaceCustomer.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceCustomer\obj\Debug\net8.0\ref\InterfaceCustomer.dll

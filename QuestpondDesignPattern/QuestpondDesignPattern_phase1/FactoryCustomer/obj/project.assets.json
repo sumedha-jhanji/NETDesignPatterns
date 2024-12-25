@@ -78,14 +78,40 @@
           }
         }
       },
+      "InterfaceCustomer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/InterfaceCustomer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InterfaceCustomer.dll": {}
+        }
+      },
       "MiddleLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "InterfaceCustomer": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/MiddleLayer.dll": {}
         },
         "runtime": {
           "bin/placeholder/MiddleLayer.dll": {}
+        }
+      },
+      "ValidationAlgorithms/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "InterfaceCustomer": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ValidationAlgorithms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ValidationAlgorithms.dll": {}
         }
       }
     }
@@ -197,17 +223,28 @@
         "unity.netcore.nuspec"
       ]
     },
+    "InterfaceCustomer/1.0.0": {
+      "type": "project",
+      "path": "../InterfaceCustomer/InterfaceCustomer.csproj",
+      "msbuildProject": "../InterfaceCustomer/InterfaceCustomer.csproj"
+    },
     "MiddleLayer/1.0.0": {
       "type": "project",
       "path": "../MiddleLayer/MiddleLayer.csproj",
       "msbuildProject": "../MiddleLayer/MiddleLayer.csproj"
+    },
+    "ValidationAlgorithms/1.0.0": {
+      "type": "project",
+      "path": "../ValidationAlgorithms/ValidationAlgorithms.csproj",
+      "msbuildProject": "../ValidationAlgorithms/ValidationAlgorithms.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "MiddleLayer >= 1.0.0",
       "Unity >= 5.11.10",
-      "Unity.NetCore >= 4.0.3"
+      "Unity.NetCore >= 4.0.3",
+      "ValidationAlgorithms >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -217,11 +254,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj",
+      "projectUniqueName": "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj",
       "projectName": "FactoryCustomer",
-      "projectPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj",
+      "projectPath": "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj",
       "packagesPath": "C:\\Users\\Sumedha\\.nuget\\packages\\",
-      "outputPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\obj\\",
+      "outputPath": "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -243,8 +280,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj": {
-              "projectPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj"
+            "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj": {
+              "projectPath": "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj"
+            },
+            "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\ValidationAlgorithms\\ValidationAlgorithms.csproj": {
+              "projectPath": "D:\\Study Material\\Design Patterns\\NETDesignPatterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\ValidationAlgorithms\\ValidationAlgorithms.csproj"
             }
           }
         }

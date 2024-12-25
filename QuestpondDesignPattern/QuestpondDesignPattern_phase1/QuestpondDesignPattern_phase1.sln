@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryCustomer", "FactoryC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowcCustomer", "WindowcCustomer\WindowcCustomer.csproj", "{9A6EB6D7-FA2A-418B-8250-88654D153B97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceCustomer", "InterfaceCustomer\InterfaceCustomer.csproj", "{99242C1D-B27D-4F11-A69F-D182C0255EEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationAlgorithms", "ValidationAlgorithms\ValidationAlgorithms.csproj", "{3594DD3B-F1CF-49AF-B9C7-907557111FB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{9A6EB6D7-FA2A-418B-8250-88654D153B97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6EB6D7-FA2A-418B-8250-88654D153B97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6EB6D7-FA2A-418B-8250-88654D153B97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99242C1D-B27D-4F11-A69F-D182C0255EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99242C1D-B27D-4F11-A69F-D182C0255EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99242C1D-B27D-4F11-A69F-D182C0255EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99242C1D-B27D-4F11-A69F-D182C0255EEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3594DD3B-F1CF-49AF-B9C7-907557111FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3594DD3B-F1CF-49AF-B9C7-907557111FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3594DD3B-F1CF-49AF-B9C7-907557111FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3594DD3B-F1CF-49AF-B9C7-907557111FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

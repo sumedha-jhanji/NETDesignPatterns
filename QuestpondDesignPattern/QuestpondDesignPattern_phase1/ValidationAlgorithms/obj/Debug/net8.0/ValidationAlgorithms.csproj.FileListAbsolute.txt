@@ -1,0 +1,16 @@
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\bin\Debug\net8.0\ValidationAlgorithms.deps.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\bin\Debug\net8.0\ValidationAlgorithms.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\bin\Debug\net8.0\ValidationAlgorithms.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\bin\Debug\net8.0\InterfaceCustomer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\bin\Debug\net8.0\InterfaceCustomer.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.csproj.AssemblyReference.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.AssemblyInfoInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.AssemblyInfo.cs
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.csproj.CoreCompileInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.sourcelink.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\Validati.8EC81263.Up2Date
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\refint\ValidationAlgorithms.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ValidationAlgorithms.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\ValidationAlgorithms\obj\Debug\net8.0\ref\ValidationAlgorithms.dll

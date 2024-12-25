@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ValidationAlgorithms/1.0.0": {
+        "dependencies": {
+          "InterfaceCustomer": "1.0.0"
+        },
+        "runtime": {
+          "ValidationAlgorithms.dll": {}
+        }
+      },
+      "InterfaceCustomer/1.0.0": {
+        "runtime": {
+          "InterfaceCustomer.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ValidationAlgorithms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InterfaceCustomer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

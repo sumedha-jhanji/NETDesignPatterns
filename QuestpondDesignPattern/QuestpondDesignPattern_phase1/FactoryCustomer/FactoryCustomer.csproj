@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MiddleLayer\MiddleLayer.csproj" />
+    <ProjectReference Include="..\ValidationAlgorithms\ValidationAlgorithms.csproj" />
   </ItemGroup>
 
 </Project>

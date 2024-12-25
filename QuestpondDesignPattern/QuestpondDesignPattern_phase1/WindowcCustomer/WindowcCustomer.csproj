@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FactoryCustomer\FactoryCustomer.csproj" />
-    <ProjectReference Include="..\MiddleLayer\MiddleLayer.csproj" />
+    <ProjectReference Include="..\InterfaceCustomer\InterfaceCustomer.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,12 @@
 using MiddleLayer;
 using FactoryCustomer;
+using InterfaceCustomer;
 
 namespace WindowcCustomer
 {
     public partial class Form1 : Form
     {
-        private BaseCustomer _customer;
+        private ICustomer _customer;
 
         public Form1()
         {
@@ -40,7 +41,7 @@ namespace WindowcCustomer
         {
             _customer.CustomerName = txtCustomerName.Text;
             _customer.PhoneNumber = txtPhoneNumber.Text;
-            _customer.BillDate =  !string.IsNullOrEmpty(txtBillDate.Text) ? Convert.ToDateTime(txtBillDate.Text) : null;
+            _customer.BillDate =  !string.IsNullOrEmpty(txtBillDate.Text) ? Convert.ToDateTime(txtBillDate.Text) : DateTime.Now;
             _customer.BillAmount = !string.IsNullOrEmpty(txtBillAmount.Text) ? Convert.ToInt32(txtBillAmount.Text) : 0 ;
             _customer.CustomerAddress = txtAddress.Text;
         }
