@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "FactoryCustomer/1.0.0": {
+        "dependencies": {
+          "MiddleLayer": "1.0.0"
+        },
+        "runtime": {
+          "FactoryCustomer.dll": {}
+        }
+      },
+      "MiddleLayer/1.0.0": {
+        "runtime": {
+          "MiddleLayer.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FactoryCustomer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MiddleLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

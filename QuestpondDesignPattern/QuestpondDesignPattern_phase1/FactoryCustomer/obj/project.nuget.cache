@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "65DkmwOm4yk=",
+  "success": true,
+  "projectFilePath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sumedha\\.nuget\\packages\\commonservicelocator.netcore\\1.3.1\\commonservicelocator.netcore.1.3.1.nupkg.sha512",
+    "C:\\Users\\Sumedha\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\Sumedha\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512",
+    "C:\\Users\\Sumedha\\.nuget\\packages\\unity.netcore\\4.0.3\\unity.netcore.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

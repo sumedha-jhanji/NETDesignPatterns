@@ -1,0 +1,352 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "CommonServiceLocator.NetCore/1.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Practices.ServiceLocation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Practices.ServiceLocation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Tulpep.NotificationWindow/1.1.38": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Tulpep.NotificationWindow.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Tulpep.NotificationWindow.dll": {}
+        }
+      },
+      "Unity/5.11.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Unity.Abstractions.dll": {
+            "related": ".pdb"
+          },
+          "lib/netcoreapp3.0/Unity.Container.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Unity.Abstractions.dll": {
+            "related": ".pdb"
+          },
+          "lib/netcoreapp3.0/Unity.Container.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Unity.NetCore/4.0.3": {
+        "type": "package",
+        "dependencies": {
+          "CommonServiceLocator.NetCore": "1.3.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Practices.Unity.Configuration.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.Practices.Unity.RegistrationByConvention.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.Practices.Unity.dll": {
+            "related": ".Configuration.xml;.RegistrationByConvention.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Practices.Unity.Configuration.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.Practices.Unity.RegistrationByConvention.dll": {
+            "related": ".xml"
+          },
+          "lib/netstandard2.0/Microsoft.Practices.Unity.dll": {
+            "related": ".Configuration.xml;.RegistrationByConvention.xml;.xml"
+          }
+        }
+      },
+      "FactoryCustomer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MiddleLayer": "1.0.0",
+          "Unity": "5.11.10",
+          "Unity.NetCore": "4.0.3"
+        },
+        "compile": {
+          "bin/placeholder/FactoryCustomer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FactoryCustomer.dll": {}
+        }
+      },
+      "MiddleLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/MiddleLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MiddleLayer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommonServiceLocator.NetCore/1.3.1": {
+      "sha512": "+5n9l8QUPAz3jWrA0YRco8ZGoYqq+hqXaodnQEjD7MI5LHrvzAIZvXpVrDzpFKA4pR7tWPYwOTKncUUv4UYIRQ==",
+      "type": "package",
+      "path": "commonservicelocator.netcore/1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "commonservicelocator.netcore.1.3.1.nupkg.sha512",
+        "commonservicelocator.netcore.nuspec",
+        "lib/netstandard2.0/Microsoft.Practices.ServiceLocation.dll",
+        "lib/netstandard2.0/Microsoft.Practices.ServiceLocation.xml"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "sha512": "wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Tulpep.NotificationWindow/1.1.38": {
+      "sha512": "cotu1DDvSiSqvkGIY0SOh1QN5NgXTiWJEspZCx34My+p0q9ONvtPYUZELyN+Fpo0U/KyAG5B0wEiiFdaMCesag==",
+      "type": "package",
+      "path": "tulpep.notificationwindow/1.1.38",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Tulpep.NotificationWindow.dll",
+        "tulpep.notificationwindow.1.1.38.nupkg.sha512",
+        "tulpep.notificationwindow.nuspec"
+      ]
+    },
+    "Unity/5.11.10": {
+      "sha512": "B4+Ps3oqI78hJ+dAFsJhPkJT6qycsNExgLbtw7CEHSzKc2ac3YyUR8SHQ+ZyTwld/y5IbDx/aNOHnKE9Em1zWA==",
+      "type": "package",
+      "path": "unity/5.11.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Unity.Abstractions.dll",
+        "lib/net40/Unity.Abstractions.pdb",
+        "lib/net40/Unity.Container.dll",
+        "lib/net40/Unity.Container.pdb",
+        "lib/net45/Unity.Abstractions.dll",
+        "lib/net45/Unity.Abstractions.pdb",
+        "lib/net45/Unity.Container.dll",
+        "lib/net45/Unity.Container.pdb",
+        "lib/net46/Unity.Abstractions.dll",
+        "lib/net46/Unity.Abstractions.pdb",
+        "lib/net46/Unity.Container.dll",
+        "lib/net46/Unity.Container.pdb",
+        "lib/net47/Unity.Abstractions.dll",
+        "lib/net47/Unity.Abstractions.pdb",
+        "lib/net47/Unity.Container.dll",
+        "lib/net47/Unity.Container.pdb",
+        "lib/net48/Unity.Abstractions.dll",
+        "lib/net48/Unity.Abstractions.pdb",
+        "lib/net48/Unity.Container.dll",
+        "lib/net48/Unity.Container.pdb",
+        "lib/netcoreapp1.0/Unity.Abstractions.dll",
+        "lib/netcoreapp1.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp1.0/Unity.Container.dll",
+        "lib/netcoreapp1.0/Unity.Container.pdb",
+        "lib/netcoreapp2.0/Unity.Abstractions.dll",
+        "lib/netcoreapp2.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp2.0/Unity.Container.dll",
+        "lib/netcoreapp2.0/Unity.Container.pdb",
+        "lib/netcoreapp3.0/Unity.Abstractions.dll",
+        "lib/netcoreapp3.0/Unity.Abstractions.pdb",
+        "lib/netcoreapp3.0/Unity.Container.dll",
+        "lib/netcoreapp3.0/Unity.Container.pdb",
+        "lib/netstandard1.0/Unity.Abstractions.dll",
+        "lib/netstandard1.0/Unity.Abstractions.pdb",
+        "lib/netstandard1.0/Unity.Container.dll",
+        "lib/netstandard1.0/Unity.Container.pdb",
+        "lib/netstandard2.0/Unity.Abstractions.dll",
+        "lib/netstandard2.0/Unity.Abstractions.pdb",
+        "lib/netstandard2.0/Unity.Container.dll",
+        "lib/netstandard2.0/Unity.Container.pdb",
+        "unity.5.11.10.nupkg.sha512",
+        "unity.nuspec"
+      ]
+    },
+    "Unity.NetCore/4.0.3": {
+      "sha512": "Se1z5U72aUzd5CklbtYD30iPB1D5zoe1X9MVgmyczwGgR//SEcfoT2BIlOzc0zpHB6nMIH3RvBULcpAza377nA==",
+      "type": "package",
+      "path": "unity.netcore/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.RegistrationByConvention.dll",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.RegistrationByConvention.xml",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.dll",
+        "lib/netstandard2.0/Microsoft.Practices.Unity.xml",
+        "unity.netcore.4.0.3.nupkg.sha512",
+        "unity.netcore.nuspec"
+      ]
+    },
+    "FactoryCustomer/1.0.0": {
+      "type": "project",
+      "path": "../FactoryCustomer/FactoryCustomer.csproj",
+      "msbuildProject": "../FactoryCustomer/FactoryCustomer.csproj"
+    },
+    "MiddleLayer/1.0.0": {
+      "type": "project",
+      "path": "../MiddleLayer/MiddleLayer.csproj",
+      "msbuildProject": "../MiddleLayer/MiddleLayer.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "FactoryCustomer >= 1.0.0",
+      "MiddleLayer >= 1.0.0",
+      "Tulpep.NotificationWindow >= 1.1.38"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Sumedha\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\WindowcCustomer\\WindowcCustomer.csproj",
+      "projectName": "WindowcCustomer",
+      "projectPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\WindowcCustomer\\WindowcCustomer.csproj",
+      "packagesPath": "C:\\Users\\Sumedha\\.nuget\\packages\\",
+      "outputPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\WindowcCustomer\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Sumedha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj": {
+              "projectPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\FactoryCustomer\\FactoryCustomer.csproj"
+            },
+            "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj": {
+              "projectPath": "D:\\Study Material\\Design Patterns\\QuestpondDesignPattern\\QuestpondDesignPattern_phase1\\MiddleLayer\\MiddleLayer.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "Tulpep.NotificationWindow": {
+            "target": "Package",
+            "version": "[1.1.38, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Tulpep.NotificationWindow 1.1.38' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Tulpep.NotificationWindow",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
+}
