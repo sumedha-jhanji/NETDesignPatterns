@@ -376,6 +376,80 @@ public class BaseCustomer :ICustomer
  }
 ```
 
+## Repository Pattern
+- Decounple the model from Data access layer
+- In our app till now, UI will talk with MiddleLayer using InterfaceCustomer and Middlelayer will talk with DAL using InterfaceDal
+- **Generic Repository Pattern:** can accept any type of object
+
+![image](https://github.com/user-attachments/assets/6005ddaf-86c0-4252-9cbc-73bff3919605)
+
+
+## Template Pattern
+- behavioral design pattern that defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
+- Say we have DAL with ADO.NET, so we will be having  fixed sequence: open connection, execute command, close connection. Also open and close connection code is not going to change.
+- So we can define a base class that will have fied sequence and common code and a method that can have different implementations
+- **Key Concepts:**
+- Abstract Class: The template method pattern typically involves an abstract class that defines the template method, which outlines the steps of the algorithm.
+- Template Method: A method in the abstract class that defines the sequence of steps of the algorithm. Some of these steps may call abstract methods that subclasses must implement.
+- Concrete Classes: Subclasses that implement the abstract methods defined in the abstract class, providing specific behavior for the steps of the algorithm.
+- example: Page life cycle
+```csharp
+//Design Pattern:- Template Pattern
+public abstract class TemplateADO<AnyType> : AbstractDAL<AnyType> //Template
+{
+    protected SqlConnection objConn = null;
+    protected SqlCommand objComm = null;
+    public TemplateADO(string connectionstring) : base(connectionstring)
+    {
+        
+    }
+    private void OpenConnection()
+    {
+        objConn=new SqlConnection(ConnectionString);
+        objConn.Open();
+        objComm = new SqlCommand();
+        objComm.Connection = objConn;
+    }
+
+    protected abstract void ExecuteCommand(AnyType obj); // we want chid classes to define this method
+    
+    private void CloseConnection()
+    {
+        objConn.Close();
+    }
+    public void Execute(AnyType obj)  // template method which ahs define fixed sequence
+    {
+        //fixed sequence
+        OpenConnection();
+        ExecuteCommand(obj);
+        CloseConnection();
+
+    }
+
+    public override void Save()
+    {
+        foreach(AnyType o in AnyTypes)
+        {
+            Execute(o);
+        }
+    }
+}
+
+ public class CustomerDAL : TemplateADO<ICustomer>
+ {
+     public CustomerDAL(string _ConnectionString)
+        : base(_ConnectionString)
+     {
+
+     }
+
+     protected override void ExecuteCommand(ICustomer obj)
+     {
+         objComm.CommandText = "";
+     }
+ }
+```
+
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
 
