@@ -1,0 +1,16 @@
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\bin\Debug\net8.0\CommonDAL.deps.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\bin\Debug\net8.0\CommonDAL.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\bin\Debug\net8.0\CommonDAL.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\bin\Debug\net8.0\InterfaceDal.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\bin\Debug\net8.0\InterfaceDal.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.csproj.AssemblyReference.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.AssemblyInfoInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.AssemblyInfo.cs
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.csproj.CoreCompileInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.sourcelink.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.csproj.Up2Date
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\refint\CommonDAL.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\CommonDAL.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\CommonDAL\obj\Debug\net8.0\ref\CommonDAL.dll

@@ -33,3 +33,7 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\ref\FactoryCustomer.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.pdb

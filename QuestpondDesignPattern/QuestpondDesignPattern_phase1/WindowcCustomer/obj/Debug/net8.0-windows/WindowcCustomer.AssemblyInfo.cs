@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindowcCustomer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8f7b3ad4ec5922dab30a45b343c8e52d5b2be14")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73ecf6fd2423d7aa310d892b4ee2c13fb923dc12")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindowcCustomer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindowcCustomer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

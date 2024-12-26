@@ -41,6 +41,10 @@
             txtAddress = new TextBox();
             cmbCustomerType = new ComboBox();
             btnValidate = new Button();
+            addCustomer = new Button();
+            dtgGridCustomer = new DataGridView();
+            DalLayer = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)dtgGridCustomer).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -146,19 +150,48 @@
             // 
             // btnValidate
             // 
-            btnValidate.Location = new Point(174, 167);
+            btnValidate.Location = new Point(74, 172);
             btnValidate.Name = "btnValidate";
-            btnValidate.Size = new Size(165, 23);
+            btnValidate.Size = new Size(127, 23);
             btnValidate.TabIndex = 12;
-            btnValidate.Text = "Validate";
+            btnValidate.Text = "Validate Customer";
             btnValidate.UseVisualStyleBackColor = true;
             btnValidate.Click += btnValidate_Click;
+            // 
+            // addCustomer
+            // 
+            addCustomer.Location = new Point(207, 172);
+            addCustomer.Name = "addCustomer";
+            addCustomer.Size = new Size(137, 23);
+            addCustomer.TabIndex = 13;
+            addCustomer.Text = "Add Customer";
+            addCustomer.UseVisualStyleBackColor = true;
+            addCustomer.Click += addCustomer_Click;
+            // 
+            // dtgGridCustomer
+            // 
+            dtgGridCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgGridCustomer.Location = new Point(74, 222);
+            dtgGridCustomer.Name = "dtgGridCustomer";
+            dtgGridCustomer.Size = new Size(689, 216);
+            dtgGridCustomer.TabIndex = 14;
+            // 
+            // DalLayer
+            // 
+            DalLayer.FormattingEnabled = true;
+            DalLayer.Location = new Point(358, 32);
+            DalLayer.Name = "DalLayer";
+            DalLayer.Size = new Size(121, 23);
+            DalLayer.TabIndex = 15;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DalLayer);
+            Controls.Add(dtgGridCustomer);
+            Controls.Add(addCustomer);
             Controls.Add(btnValidate);
             Controls.Add(cmbCustomerType);
             Controls.Add(txtAddress);
@@ -174,6 +207,8 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dtgGridCustomer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,5 +228,8 @@
         private TextBox txtAddress;
         private ComboBox cmbCustomerType;
         private Button btnValidate;
+        private Button addCustomer;
+        private DataGridView dtgGridCustomer;
+        private ComboBox DalLayer;
     }
 }

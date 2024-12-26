@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using InterfaceCustomer;
+﻿using InterfaceCustomer;
+using InterfaceDal;
 using Microsoft.Practices.Unity;
 using MiddleLayer;
 using ValidationAlgorithms;
@@ -11,24 +7,26 @@ using ValidationAlgorithms;
 namespace FactoryCustomer
 {
 
-    public static class FactoryUsingUnity
+    public static class FactoryUsingUnity<AnyType>
     {
         //Design Pattern: - Unity Pattern to automate Simple Fatory pattern
-        private static IUnityContainer customers = null; // Unity container is a container where we will create objects like earlier we are doing using Dictionary
+        private static IUnityContainer objectsOfOurProjects = null; // Unity container is a container where we will create objects like earlier we are doing using Dictionary
 
-        public static ICustomer CreateCustomer(string customerType)
+        public static AnyType CreateObject(string Type) // make it generic
         {
-            if (customers == null) {
-                customers = new UnityContainer();
-                customers.RegisterType<ICustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
-                customers.RegisterType<ICustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
+            if (objectsOfOurProjects == null) {
+                objectsOfOurProjects = new UnityContainer();
+                objectsOfOurProjects.RegisterType<ICustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
+                objectsOfOurProjects.RegisterType<ICustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
 
             }
 
 
             //Design Pattern:- RIP Replace If with Polymorphism
-            return customers.Resolve<ICustomer>(customerType);
+            return objectsOfOurProjects.Resolve<AnyType>(Type);
         }
+
+
 
     }
 }

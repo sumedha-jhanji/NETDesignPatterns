@@ -1,0 +1,12 @@
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\bin\Debug\net8.0\InterfaceDal.deps.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\bin\Debug\net8.0\InterfaceDal.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\bin\Debug\net8.0\InterfaceDal.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.GeneratedMSBuildEditorConfig.editorconfig
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.AssemblyInfoInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.AssemblyInfo.cs
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.csproj.CoreCompileInputs.cache
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.sourcelink.json
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\refint\InterfaceDal.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\InterfaceDal.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\InterfaceDal\obj\Debug\net8.0\ref\InterfaceDal.dll

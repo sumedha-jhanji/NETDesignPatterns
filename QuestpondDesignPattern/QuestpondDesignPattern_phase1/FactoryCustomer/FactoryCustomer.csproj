@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommonDAL\CommonDAL.csproj" />
+    <ProjectReference Include="..\InterfaceDal\InterfaceDal.csproj" />
     <ProjectReference Include="..\MiddleLayer\MiddleLayer.csproj" />
     <ProjectReference Include="..\ValidationAlgorithms\ValidationAlgorithms.csproj" />
   </ItemGroup>
