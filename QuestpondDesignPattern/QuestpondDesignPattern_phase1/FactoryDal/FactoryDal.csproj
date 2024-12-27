@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ADODOTNetDAL\ADODOTNetDAL.csproj" />
+    <ProjectReference Include="..\EFDal\EFDal.csproj" />
     <ProjectReference Include="..\InterfaceCustomer\InterfaceCustomer.csproj" />
   </ItemGroup>
 

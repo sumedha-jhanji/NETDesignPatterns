@@ -64,7 +64,7 @@ namespace ADODOTNetDAL
         }
     }
 
-    public class CustomerDAL : TemplateADO<ICustomer>
+    public class CustomerDAL : TemplateADO<BaseCustomer>
     {
         public CustomerDAL(string _ConnectionString)
            : base(_ConnectionString)
@@ -73,32 +73,33 @@ namespace ADODOTNetDAL
         }
 
 
-        protected override void ExecuteCommand(ICustomer obj)
+        protected override void ExecuteCommand(BaseCustomer obj)
         {
             objComm.CommandText = "insert into tblCustomer(" +
                                            "CustomerName," +
                                            "BillAmount,"+
                                             "BillDate," +
                                            "PhoneNumber," +
-                                           "CustomerAddress)" +
+                                           "CustomerAddress,CustomerType)" +
                                            "values('" + obj.CustomerName + "'," +
                                            obj.BillAmount + ",'" +
                                            obj.BillDate + "','" +
                                            obj.PhoneNumber + "','" +
-                                           obj.CustomerAddress + 
-                                           "')";
+                                           obj.CustomerAddress + "','" + obj.CustomerType + "')";
             objComm.ExecuteNonQuery();
         }
 
-        protected override List<ICustomer> ExecuteCommand()
+        protected override List<BaseCustomer> ExecuteCommand()
         {
             objComm.CommandText = "select * from tblCustomer";
             SqlDataReader dr = null;
             dr = objComm.ExecuteReader();
-            List<ICustomer> custs = new List<ICustomer>();
+            List<BaseCustomer> custs = new List<BaseCustomer>();
             while (dr.Read())
             {
-                ICustomer icust = FactoryUsingUnity<ICustomer>.CreateObject("Customer");
+                BaseCustomer icust = FactoryUsingUnity<BaseCustomer>.CreateObject("Customer");
+                icust.Id = Convert.ToInt32(dr["Id"]);
+                icust.CustomerType = dr["CustomerType"].ToString();
                 icust.CustomerName = dr["CustomerName"].ToString();
                 icust.BillDate = Convert.ToDateTime(dr["BillDate"]);
                 icust.BillAmount = Convert.ToDecimal(dr["BillAmount"]);

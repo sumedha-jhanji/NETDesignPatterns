@@ -2,7 +2,7 @@
 
 namespace CommonDAL
 {
-    public abstract class AbstractDAL<AnyType> : IDal<AnyType> // half defined class : common class for all DAL classes
+    public abstract class AbstractDAL<AnyType> : IDal<AnyType> // half defined class : common class for all DAL classes (in-memory store)
     {
         protected List<AnyType> AnyTypes = new List<AnyType>();
         protected string ConnectionString = "";

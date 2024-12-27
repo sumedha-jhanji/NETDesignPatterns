@@ -16,8 +16,8 @@ namespace FactoryCustomer
         {
             if (objectsOfOurProjects == null) {
                 objectsOfOurProjects = new UnityContainer();
-                objectsOfOurProjects.RegisterType<ICustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
-                objectsOfOurProjects.RegisterType<ICustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
+                objectsOfOurProjects.RegisterType<BaseCustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
+                objectsOfOurProjects.RegisterType<BaseCustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
 
             }
 

@@ -1,4 +1,5 @@
 ﻿using ADODOTNetDAL;
+using EFDal;
 using InterfaceCustomer;
 using InterfaceDal;
 using Microsoft.Practices.Unity;
@@ -15,8 +16,10 @@ namespace FactoryDal
             if (objectsOfOurProjects == null)
             {
                 objectsOfOurProjects = new UnityContainer();
-                objectsOfOurProjects.RegisterType<IDal<ICustomer>, CustomerDAL>("ADODal"); // registering DAL
-
+                objectsOfOurProjects.RegisterType<IDal<BaseCustomer>, 
+                    CustomerDAL>("ADODal"); // registering DAL
+                objectsOfOurProjects.RegisterType<IDal<BaseCustomer>,
+                    EfCustomerDal>("EFDal");
             }
 
 

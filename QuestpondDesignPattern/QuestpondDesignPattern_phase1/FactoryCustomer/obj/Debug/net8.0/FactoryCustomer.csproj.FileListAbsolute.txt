@@ -16,9 +16,15 @@ D:\Study Material\Design Patterns\QuestpondDesignPattern\QuestpondDesignPattern_
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\FactoryCustomer.deps.json
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\FactoryCustomer.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\FactoryCustomer.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceCustomer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\MiddleLayer.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.pdb
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\MiddleLayer.pdb
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.pdb
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceCustomer.pdb
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\FactoryCustomer.csproj.AssemblyReference.cache
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\FactoryCustomer.GeneratedMSBuildEditorConfig.editorconfig
@@ -31,9 +37,3 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\refint\FactoryCustomer.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\FactoryCustomer.pdb
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\obj\Debug\net8.0\ref\FactoryCustomer.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\ValidationAlgorithms.pdb
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\CommonDAL.pdb
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\FactoryCustomer\bin\Debug\net8.0\InterfaceDal.pdb

@@ -136,7 +136,6 @@
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(163, 111);
             txtAddress.TabIndex = 10;
-            txtAddress.TextChanged += txtAddress_TextChanged;
             // 
             // cmbCustomerType
             // 

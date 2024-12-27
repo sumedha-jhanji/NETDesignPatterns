@@ -8,22 +8,17 @@ namespace WindowcCustomer
 {
     public partial class Form1 : Form
     {
-        private ICustomer _customer;
+        private BaseCustomer _customer = null;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void txtAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cmbCustomerType_SelectedIndexChanged(object sender, EventArgs e)
         {
             //_customer = Factory.CreateCustomer(cmbCustomerType.Text);
-            _customer = FactoryCustomer.FactoryUsingUnity<ICustomer>.CreateObject(cmbCustomerType.Text);
+            _customer = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject(cmbCustomerType.Text);
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
@@ -52,23 +47,34 @@ namespace WindowcCustomer
         private void addCustomer_Click(object sender, EventArgs e)
         {
             SetCustomer();
-            IDal<ICustomer> dal = FactoryDal.FactoryUsingUnity<IDal<ICustomer>>.CreateObject("ADODal");
+            IDal<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IDal<BaseCustomer>>.CreateObject(DalLayer.Text);
             dal.Add(_customer); // in-memory
             dal.Save();//physical commit
             LoadGrid();
+            ClearCustomer();
+        }
+
+        private void ClearCustomer()
+        {
+            txtCustomerName.Text = "";
+            txtPhoneNumber.Text = "";
+            txtBillDate.Text = DateTime.Now.Date.ToString();
+            txtBillAmount.Text = "";
+            txtAddress.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             DalLayer.Items.Add("ADODal");
             DalLayer.Items.Add("EFDal");
+            DalLayer.SelectedIndex = 0;
             LoadGrid();
 
         }
         private void LoadGrid()
         {
-            IDal<ICustomer> Idal = FactoryDal.FactoryUsingUnity<IDal<ICustomer>>.CreateObject("ADODal");
-            List<ICustomer> custs = Idal.Search();
+            IDal<BaseCustomer> Idal =  FactoryDal.FactoryUsingUnity<IDal<BaseCustomer>>.CreateObject(DalLayer.Text);
+            List<BaseCustomer> custs = Idal.Search();
             dtgGridCustomer.DataSource = custs;
 
         }
