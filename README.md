@@ -450,6 +450,135 @@ public abstract class TemplateADO<AnyType> : AbstractDAL<AnyType> //Template
  }
 ```
 
+## Entity Framework
+- implements ORM (Object Relational Mapping)
+  - objects: Entities like Customer, Supplier
+  - Mapping: DAL
+  - RDBMS: Tables
+- uses ADO.NET internally
+- liek a wrapper over ADO.NET, simplifies ADO.NET API
+- rather than dealing into data set, adapter, we deal with domain entities
+- needs unique key(for this use [Key] dataannotation on ID property
+- Drawback: we cannot map table with interface. We need to have atleast an abstract class in between 9a strongly typed class. In our app, BaseCustomer class has been converted into abstract class which will map with RDBMS table structure rather than interface
+- **steps to add EF**
+1. Create a class which will implement "DbContext"
+```csharp
+public class EFDalAbstract<AnyType> : DbContext, IDal<AnyType> where AnyType : class
+{
+    public void Add(AnyType obj) //in-memory
+    {
+        Set<AnyType>().Add(obj);
+    }
+
+    public void Save() 
+    {
+        SaveChanges();// physical Commit
+    }
+
+    public List<AnyType> Search()
+    {
+        return Set<AnyType>().AsQueryable<AnyType>().ToList<AnyType>();
+    }
+
+    public void Update(AnyType obj)
+    {
+        throw new NotImplementedException();
+    }
+}
+```
+2. create a specific object EF class where mapping code will be written in OnModelCreating()
+```csharp
+public class EfCustomerDal : EFDalAbstract<BaseCustomer>
+{
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
+        //mapping code
+        modelBuilder.Entity<BaseCustomer>().ToTable("tblCustomer");
+        modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
+        modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
+        modelBuilder.Entity<BaseCustomer>().Ignore(t => t.CustomerType);
+    }
+}
+```
+
+3. In FactoryDal, register EFDal
+```csharp
+objectsOfOurProjects.RegisterType<IDal<BaseCustomer>,
+   EfCustomerDal>("EFDal");
+```
+
+- **Note:** As EF has a drawback, so to make app work with both ADO.NET and EF, replace reference of Icustoer with BaseCustomer in registrations and UI.
+
+![image](https://github.com/user-attachments/assets/0ac2f209-ac83-4892-b206-b7d679e87e43)
+
+## Adapter Pattern
+- help client to communicate classes which are having  incompatible methods/function names in a standard uniform way
+- **Types**
+- Class Adapter Pattern
+- Object Adapter Pattern
+
+1. Class Adapter Pattern
+- Say for EF, it provides SaveChanges()/AsQueryable(). Similarly, ADO.NET has "ExecuteNonQuery()/ExecuteReader()" for that. But our project is using Save() for the same on top of it encapsulating those relevant franewok method calls. So here we can use Adapter Pattern
+- **steps to impement Adpater pattern for EF**
+- created interafce IDal
+- created class EFDalAbstract
+- inherit from IDAl ad DbContext
+- implemented Save() from IDAL
+- called ef SaveChanges() inside Save().
+
+2. Object Adapter Pattern
+```csharp
+public interface IExport
+{
+    void Export();
+}
+public class WordExport : IExport
+{
+    public void Export()
+    {
+        throw new NotImplementedException();
+    }
+}
+public class ExcelExport : IExport
+{
+    public void Export()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+//Third Party incompatibel Dll
+public class PdfExport
+{
+    public void Save()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+//Object Adapter Pattern
+public class PdfObjectAdapter : IExport
+{
+    //Internally it calls save
+    public void Export()
+    {
+    //Create instance of PdfExport
+        PdfExport c = new PdfExport();
+        c.Save();
+    }
+}
+
+//actual usage
+IExport exp = new ExcelExport();
+exp.Export();
+
+exp = new WordExport();
+exp.Export();
+
+IExport objAdapter = new PdfObjectAdapter();
+objAdapter.Export();
+```
+  
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
 
