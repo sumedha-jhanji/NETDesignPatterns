@@ -16,9 +16,24 @@ namespace FactoryCustomer
         {
             if (objectsOfOurProjects == null) {
                 objectsOfOurProjects = new UnityContainer();
-                objectsOfOurProjects.RegisterType<BaseCustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
-                objectsOfOurProjects.RegisterType<BaseCustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
 
+                //for Strategy pattern
+                //objectsOfOurProjects.RegisterType<BaseCustomer, Customer>("Customer", new InjectionConstructor(new CustomerValidation())); // IOC and DI
+                //objectsOfOurProjects.RegisterType<BaseCustomer, Lead>("Lead", new InjectionConstructor(new LeadValidation()));
+
+                //for Decorator Pattern
+                IValidation<ICustomer> custValidate = new PhoneValidation(new CustomerBasicValidation());
+                objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("Lead", new InjectionConstructor(custValidate, "Lead"));
+
+                custValidate = new CustomerBasicValidation();
+                objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("SelfService", new InjectionConstructor(custValidate, "Self Service"));
+
+                custValidate = new CustomerAddressValidation(new CustomerBasicValidation());
+                objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("HomeDelivery", new InjectionConstructor(custValidate, "Home Delivery"));
+
+
+                custValidate = new CustomerBillValidation(new CustomerBillValidation(new PhoneValidation(new CustomerBasicValidation())));
+                objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("Customer", new InjectionConstructor(custValidate, "Customer"));
             }
 
 

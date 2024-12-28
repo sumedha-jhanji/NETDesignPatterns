@@ -51,8 +51,9 @@ namespace EFDal
         {
             //mapping code
             modelBuilder.Entity<BaseCustomer>().ToTable("tblCustomer");
-            modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
-            modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
+            //when we have separate classes for each type of customer
+            //modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
+            //modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
             modelBuilder.Entity<BaseCustomer>().Ignore(t => t.CustomerType);
         }
     }
@@ -63,8 +64,9 @@ namespace EFDal
         {
             modelBuilder.Entity<BaseCustomer>()
                        .ToTable("tblCustomer");
-            modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
-            modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
+            //when we have separate classes for each type of customer
+            //modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
+            //modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
             modelBuilder.Entity<BaseCustomer>().Ignore(t => t.CustomerType);
         }
         public EUow() : base("name=ConnEf")

@@ -141,7 +141,7 @@
             // cmbCustomerType
             // 
             cmbCustomerType.FormattingEnabled = true;
-            cmbCustomerType.Items.AddRange(new object[] { "Customer", "Lead" });
+            cmbCustomerType.Items.AddRange(new object[] { "Customer", "Lead", "SelfService", "HomeDelivery" });
             cmbCustomerType.Location = new Point(174, 31);
             cmbCustomerType.Name = "cmbCustomerType";
             cmbCustomerType.Size = new Size(165, 23);

@@ -2,7 +2,7 @@
 
 namespace InterfaceCustomer
 {
-    public abstract class BaseCustomer : ICustomer
+    public class BaseCustomer : ICustomer
     {
         private IValidation<ICustomer> _validation = null;
         public BaseCustomer(IValidation<ICustomer> obj) // injecting validation object

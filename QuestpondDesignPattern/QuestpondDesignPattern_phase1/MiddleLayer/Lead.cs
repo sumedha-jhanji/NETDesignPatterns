@@ -2,6 +2,7 @@
 
 namespace MiddleLayer
 {
+    //obsolete
     public class Lead : BaseCustomer
     {
         public Lead()

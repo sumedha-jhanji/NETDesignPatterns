@@ -22,6 +22,7 @@ D:\Study Material\Design Patterns\QuestpondDesignPattern\QuestpondDesignPattern_
 D:\Study Material\Design Patterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\ref\WindowcCustomer.dll
 D:\Study Material\Design Patterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Tulpep.NotificationWindow.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.exe
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.dll.config
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.deps.json
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.runtimeconfig.json
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.dll
@@ -43,10 +44,13 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.ClientModel.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Memory.Data.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Tulpep.NotificationWindow.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Unity.Abstractions.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\Unity.Container.dll
@@ -74,6 +78,8 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\ADODOTNetDAL.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\CommonDAL.dll
@@ -107,9 +113,3 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\WindowcCustomer.pdb
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\WindowcCustomer.genruntimeconfig.cache
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\ref\WindowcCustomer.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.dll.config
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
-D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
