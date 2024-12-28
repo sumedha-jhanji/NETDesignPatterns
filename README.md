@@ -742,9 +742,141 @@ public abstract class TemplateADO<AnyType> : AbstractDAL<AnyType> //Template
  }
 ```
 
+## Decorator Pattern
+- Say we need validations like below
+
+![image](https://github.com/user-attachments/assets/e51139b8-fd89-4889-a637-999d98fd8dd7)
+
+- Since here Custome Name is base validation as it is compulsory for all types of customers
+- for other validations we need to go on top of this base validation like
+    - Customer Name + Phone Number will become Lead Validation
+ 
+- decorator pattern: we creatte base functionality anf on top of that we add other functionality to create new functionality
+- **Key Concepts**
+- Base Validation
+- Discrete Classes(Customer Validation, Phone Validation, Bill Validation)
+- Link in all discrete classes
+
+- **steps**
+1. Define basde validation, Validation Linker and other discrete validation classes
+```csharp
+- Replace code ofValidation.cs
+//Design Pattern:- Decorator Pattern
+
+// created base validation
+public class CustomerBasicValidation : IValidation<ICustomer> 
+{
+    public void Validate(ICustomer obj)
+    {
+        if (obj.CustomerName.Length == 0)
+        {
+            throw new Exception("Customer Name is required");
+        }
+    }
+}
+
+//will connect individual validations to create a decorator
+public class ValidationLinker : IValidation<ICustomer>
+{
+    private IValidation<ICustomer> _nextValidator = null; // link list needs to know what is the next validator to call
+    public ValidationLinker(IValidation<ICustomer> validator) // will be injectede from outside (DI and IOC)
+    {
+        _nextValidator  = validator;
+    }
+    public virtual void Validate(ICustomer obj)
+    {
+        _nextValidator.Validate(obj);
+    }
+}
+
+public class PhoneValidation : ValidationLinker
+{
+    public PhoneValidation(IValidation<ICustomer> validator):base(validator)
+    {
+        
+    }
+    public override void Validate(ICustomer obj)
+    {
+        base.Validate(obj); // this will call the top of the cake
+        if (obj.PhoneNumber.Length == 0)
+        {
+            throw new Exception("Phone number is required");
+        }
+    }
+}
+
+public class CustomerAddressValidation : ValidationLinker
+{
+    public CustomerAddressValidation(IValidation<ICustomer> validator) : base(validator)
+    {
+
+    }
+    public override void Validate(ICustomer obj)
+    {
+        base.Validate(obj); // this will call the top of the cake
+        if (obj.CustomerAddress.Length == 0)
+        {
+            throw new Exception("Address required");
+        }
+    }
+}
+
+public class CustomerBillValidation : ValidationLinker
+{
+    public CustomerBillValidation(IValidation<ICustomer> validator) : base(validator)
+    {
+
+    }
+    public override void Validate(ICustomer obj)
+    {
+        base.Validate(obj); // this will call the top of the cake
+        if (obj.BillAmount == 0)
+        {
+            throw new Exception("Bill Amount is required");
+        }
+        if (obj.BillDate > DateTime.Now)
+        {
+            throw new Exception("Bill date  is not proper");
+        }
+    }
+}
+```
+
+2. Inject the validation logic in FacvtoryCustomer
+```csharp
+IValidation<ICustomer> custValidate = new PhoneValidation(new CustomerBasicValidation());
+objectsOfOurProjects.RegisterType<BaseCustomer, Lead>("Lead", new InjectionConstructor(custValidate));
+```
+
+3. Register validations and customers as
+```csharp
+public static AnyType CreateObject(string Type) // make it generic
+{
+    if (objectsOfOurProjects == null) {
+        objectsOfOurProjects = new UnityContainer();
+
+        //for Decorator Pattern
+        IValidation<ICustomer> custValidate = new PhoneValidation(new CustomerBasicValidation());
+        objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("Lead", new InjectionConstructor(custValidate, "Lead"));
+
+        custValidate = new CustomerBasicValidation();
+        objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("SelfService", new InjectionConstructor(custValidate, "Self Service"));
+
+        custValidate = new CustomerAddressValidation(new CustomerBasicValidation());
+        objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("HomeDelivery", new InjectionConstructor(custValidate, "Home Delivery"));
 
 
+        custValidate = new CustomerBillValidation(new CustomerBillValidation(new PhoneValidation(new CustomerBasicValidation())));
+        objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("Customer", new InjectionConstructor(custValidate, "Customer"));
+    }
 
+
+    //Design Pattern:- RIP Replace If with Polymorphism
+    return objectsOfOurProjects.Resolve<AnyType>(Type);
+}
+```
+
+- Decorator pattern can be made more dynamic using COR or builder pattern. 
   
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
