@@ -578,6 +578,171 @@ exp.Export();
 IExport objAdapter = new PdfObjectAdapter();
 objAdapter.Export();
 ```
+
+## UOW (Unit of Work)
+- go hand on hand with repository patterh
+- resolves the repository pattern problem: Repository considers each of the instance as "Separate self contained transaction". In order to make ste of transactions as one transactiuon unit, we need UOW
+- like Repository decouples the Data access technology, similarly UOW should decouple transaction technology
+- **Steps**
+1. Create UOW interface
+```csharp
+public interface IUow
+{
+    void Commit();
+    void Rollback();
+}
+```
+2. UOW will start a transaction and then inject that transaction object inside repository and wave all repositories into a centralized transaction
+![image](https://github.com/user-attachments/assets/6ae467d1-dde8-4f27-bdbb-1b03aaa9d03f)   ![image](https://github.com/user-attachments/assets/010728b9-205d-4e59-b865-7a362e347670)
+```csharp
+For ADO.NET
+  public class ADOUow : IUow
+ {
+     public SqlConnection Connection { get; set; }
+     public SqlTransaction Transaction { get; set; }
+     public ADOUow()
+     {
+         Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ConnectionString);
+         Connection.Open();
+         Transaction = Connection.BeginTransaction();
+     }
+
+     public void Commit()
+     {
+        Transaction.Commit();
+        Connection.Close();
+     }
+
+     public void Rollback() //Design Pattern: - object adapter pattern
+     {
+         Transaction.Dispose();
+         Connection.Close();
+     }
+ }
+```csharp
+
+- In IRepository Interface add new method
+```csharp
+ void SetUow(IUow uow);// used to send UOW inside this repository
+```
+
+- In TemplateADO
+```csharp
+public abstract class TemplateADO<AnyType> : AbstractDAL<AnyType> //Template
+{
+    protected SqlConnection objConn = null;
+    protected SqlCommand objComm = null;
+    IUow UowObj = null;
+
+    public override void SetUow(IUow uow)
+    {
+        UowObj = uow;
+        objConn = ((ADOUow)uow).Connection;
+        objComm = new SqlCommand();
+        objComm.Connection = objConn;
+        objComm.Transaction = ((ADOUow)uow).Transaction;
+    }
+
+    private void OpenConnection()
+    {
+        if (objConn == null)
+        {
+            // objConn = new SqlConnection(ConnectionString); // when passing via a resolver in factory Dal
+            objConn = new SqlConnection(ConfigurationManager.
+                    ConnectionStrings["Conn"].ConnectionString);
+            objConn.Open();
+            objComm = new SqlCommand();
+            objComm.Connection = objConn;
+        }
+    }
+
+    protected abstract void ExecuteCommand(AnyType obj); // we want child classes to define this method
+
+    protected abstract List<AnyType> ExecuteCommand(); // for search
+
+    private void CloseConnection()
+    {
+        if (UowObj == null)
+        {
+            objConn.Close();
+        }
+    }
+    public void Execute(AnyType obj) // template method:  Fixed Sequence Insert
+    {
+        //fixed sequence
+        OpenConnection();
+        ExecuteCommand(obj);
+        CloseConnection();
+
+    }
+
+    //for search as it returns list
+    public List<AnyType> Execute() // Fixed Sequence select
+    {
+        //fixed sequence
+        OpenConnection();
+        List<AnyType> objTypes = ExecuteCommand();
+        CloseConnection();
+        return objTypes;
+
+    }
+
+    public override void Save()
+    {
+        foreach(AnyType o in AnyTypes)
+        {
+            Execute(o);
+        }
+    }   
+
+    public override List<AnyType> Search()
+    {
+        return Execute();
+    }
+}
+```
+
+- Register the type in Factory Dal and in Form.cs use the same as below
+```csharp
+ private void btnUOW_Click(object sender, EventArgs e)
+ {
+     IUow uow = FactoryDal.FactoryUsingUnity<IUow>.CreateObject(DalLayer.Text == "ADODal" ? "AdoUow" : "EfUOW");
+     try
+     {
+         BaseCustomer cust1 = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject("Lead");
+         cust1.CustomerType = "Lead";
+         cust1.CustomerName = "Cust1";
+         cust1.BillDate = Convert.ToDateTime("12/12/2024");
+
+         // Unit of work
+         IRepository<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>
+                              .CreateObject(DalLayer.Text); // Unit
+         dal.SetUow(uow);
+         dal.Add(cust1); // In memory
+
+
+         cust1 = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject("Lead");
+         cust1.CustomerType = "Lead";
+         cust1.CustomerName = "Cust2";
+         cust1.CustomerAddress = "dzxcczxc";
+         cust1.BillDate = Convert.ToDateTime("12/12/2024");
+         IRepository<BaseCustomer> dal1 = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>
+                              .CreateObject(DalLayer.Text); // Unit
+         dal1.SetUow(uow);
+         dal1.Add(cust1); // In memory
+
+         uow.Commit();
+     }
+     catch (Exception ex) { 
+         uow.Rollback();
+         MessageBox.Show(ex.Message.ToString());
+     }
+ }
+```
+
+
+
+
   
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
