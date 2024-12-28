@@ -6,26 +6,37 @@ using System.Data.Entity;
 namespace EFDal
 {
     //Design Pattern:- Class Adapter Pattern. We are using save() from IDal which allows clients to use common name
-    public class EFDalAbstract<AnyType> : DbContext, IDal<AnyType> where AnyType : class
+    public class EFDalAbstract<AnyType> : DbContext, IRepository<AnyType> where AnyType : class
     {
-        public EFDalAbstract():base("name=conn")
+        DbContext dbcont = null;
+        //public EFDalAbstract():base("name=conn")
+        //{
+
+        //}
+        public EFDalAbstract()
         {
-            
+            dbcont = new EUow(); // Self contained transaction
         }
+
         public void Add(AnyType obj) //in-memory
         {
-            Set<AnyType>().Add(obj);
+            dbcont.Set<AnyType>().Add(obj);
         }
 
        
         public void Save() 
         {
-            SaveChanges();// physical Commit
+            dbcont.SaveChanges();// physical Commit
         }
 
         public List<AnyType> Search()
         {
-            return Set<AnyType>().AsQueryable<AnyType>().ToList<AnyType>();
+            return dbcont.Set<AnyType>().AsQueryable<AnyType>().ToList<AnyType>();
+        }
+
+        public void SetUow(IUow uow)
+        {
+            dbcont = ((EUow)uow); // Global transaction UOW
         }
 
         public void Update(AnyType obj)
@@ -43,6 +54,31 @@ namespace EFDal
             modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
             modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
             modelBuilder.Entity<BaseCustomer>().Ignore(t => t.CustomerType);
+        }
+    }
+
+    public class EUow : DbContext, IUow
+    {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BaseCustomer>()
+                       .ToTable("tblCustomer");
+            modelBuilder.Entity<BaseCustomer>().Map<Customer>(m => m.Requires("CustomerType").HasValue("Customer"));
+            modelBuilder.Entity<BaseCustomer>().Map<Lead>(m => m.Requires("CustomerType").HasValue("Lead"));
+            modelBuilder.Entity<BaseCustomer>().Ignore(t => t.CustomerType);
+        }
+        public EUow() : base("name=ConnEf")
+        {
+
+        }
+        public void Commit()
+        {
+            SaveChanges();
+        }
+
+        public void Rollback()
+        {
+            Dispose();
         }
     }
 }

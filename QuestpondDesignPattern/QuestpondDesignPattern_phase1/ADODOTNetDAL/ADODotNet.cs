@@ -3,6 +3,7 @@ using FactoryCustomer;
 using InterfaceCustomer;
 using InterfaceDal;
 using Microsoft.Data.SqlClient;
+using System.Configuration;
 namespace ADODOTNetDAL
 {
     //Design Pattern:- Template Pattern
@@ -10,16 +11,31 @@ namespace ADODOTNetDAL
     {
         protected SqlConnection objConn = null;
         protected SqlCommand objComm = null;
-        public TemplateADO(string connectionstring) : base(connectionstring)
+        IUow UowObj = null;
+        //public TemplateADO(string connectionstring) : base(connectionstring) // when passing via a resolver in factory Dal
+        //{
+
+        //}
+        public override void SetUow(IUow uow)
         {
-            
-        }
-        private void OpenConnection()
-        {
-            objConn=new SqlConnection(ConnectionString);
-            objConn.Open();
+            UowObj = uow;
+            objConn = ((ADOUow)uow).Connection;
             objComm = new SqlCommand();
             objComm.Connection = objConn;
+            objComm.Transaction = ((ADOUow)uow).Transaction;
+        }
+
+        private void OpenConnection()
+        {
+            if (objConn == null)
+            {
+                // objConn = new SqlConnection(ConnectionString); // when passing via a resolver in factory Dal
+                objConn = new SqlConnection(ConfigurationManager.
+                        ConnectionStrings["Conn"].ConnectionString);
+                objConn.Open();
+                objComm = new SqlCommand();
+                objComm.Connection = objConn;
+            }
         }
 
         protected abstract void ExecuteCommand(AnyType obj); // we want child classes to define this method
@@ -28,7 +44,10 @@ namespace ADODOTNetDAL
 
         private void CloseConnection()
         {
-            objConn.Close();
+            if (UowObj == null)
+            {
+                objConn.Close();
+            }
         }
         public void Execute(AnyType obj) // template method:  Fixed Sequence Insert
         {
@@ -58,6 +77,8 @@ namespace ADODOTNetDAL
             }
         }
 
+       
+
         public override List<AnyType> Search()
         {
             return Execute();
@@ -66,11 +87,11 @@ namespace ADODOTNetDAL
 
     public class CustomerDAL : TemplateADO<BaseCustomer>
     {
-        public CustomerDAL(string _ConnectionString)
-           : base(_ConnectionString)
-        {
+        //public CustomerDAL(string _ConnectionString)// when passing via a resolver in factory Dal
+        //   : base(_ConnectionString)
+        //{
 
-        }
+        //}
 
 
         protected override void ExecuteCommand(BaseCustomer obj)
@@ -108,6 +129,31 @@ namespace ADODOTNetDAL
                 custs.Add(icust);
             }
             return custs;
+        }
+    }
+
+    //UOW
+    public class ADOUow : IUow
+    {
+        public SqlConnection Connection { get; set; }
+        public SqlTransaction Transaction { get; set; }
+        public ADOUow()
+        {
+            Connection = new SqlConnection(ConfigurationManager.ConnectionStrings["Conn"].ConnectionString);
+            Connection.Open();
+            Transaction = Connection.BeginTransaction();
+        }
+
+        public void Commit()
+        {
+           Transaction.Commit();
+           Connection.Close();
+        }
+
+        public void Rollback() //Design Pattern: - object adapter pattern
+        {
+            Transaction.Dispose();
+            Connection.Close();
         }
     }
 }

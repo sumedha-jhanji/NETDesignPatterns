@@ -44,6 +44,7 @@
             addCustomer = new Button();
             dtgGridCustomer = new DataGridView();
             DalLayer = new ComboBox();
+            btnUOW = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgGridCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -183,11 +184,22 @@
             DalLayer.Size = new Size(121, 23);
             DalLayer.TabIndex = 15;
             // 
+            // btnUOW
+            // 
+            btnUOW.Location = new Point(361, 172);
+            btnUOW.Name = "btnUOW";
+            btnUOW.Size = new Size(118, 23);
+            btnUOW.TabIndex = 16;
+            btnUOW.Text = "Unit of Work";
+            btnUOW.UseVisualStyleBackColor = true;
+            btnUOW.Click += btnUOW_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnUOW);
             Controls.Add(DalLayer);
             Controls.Add(dtgGridCustomer);
             Controls.Add(addCustomer);
@@ -230,5 +242,6 @@
         private Button addCustomer;
         private DataGridView dtgGridCustomer;
         private ComboBox DalLayer;
+        private Button btnUOW;
     }
 }

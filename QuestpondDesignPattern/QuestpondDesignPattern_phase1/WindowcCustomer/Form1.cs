@@ -47,7 +47,7 @@ namespace WindowcCustomer
         private void addCustomer_Click(object sender, EventArgs e)
         {
             SetCustomer();
-            IDal<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IDal<BaseCustomer>>.CreateObject(DalLayer.Text);
+            IRepository<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
             dal.Add(_customer); // in-memory
             dal.Save();//physical commit
             LoadGrid();
@@ -73,10 +73,45 @@ namespace WindowcCustomer
         }
         private void LoadGrid()
         {
-            IDal<BaseCustomer> Idal =  FactoryDal.FactoryUsingUnity<IDal<BaseCustomer>>.CreateObject(DalLayer.Text);
+            IRepository<BaseCustomer> Idal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
             List<BaseCustomer> custs = Idal.Search();
             dtgGridCustomer.DataSource = custs;
 
+        }
+
+        private void btnUOW_Click(object sender, EventArgs e)
+        {
+            IUow uow = FactoryDal.FactoryUsingUnity<IUow>.CreateObject(DalLayer.Text == "ADODal" ? "AdoUow" : "EfUOW");
+            try
+            {
+                BaseCustomer cust1 = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject("Lead");
+                cust1.CustomerType = "Lead";
+                cust1.CustomerName = "Cust1";
+                cust1.BillDate = Convert.ToDateTime("12/12/2024");
+
+                // Unit of work
+                IRepository<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>
+                                     .CreateObject(DalLayer.Text); // Unit
+                dal.SetUow(uow);
+                dal.Add(cust1); // In memory
+
+
+                cust1 = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject("Lead");
+                cust1.CustomerType = "Lead";
+                cust1.CustomerName = "Cust2";
+                cust1.CustomerAddress = "dzxcczxc";
+                cust1.BillDate = Convert.ToDateTime("12/12/2024");
+                IRepository<BaseCustomer> dal1 = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>
+                                     .CreateObject(DalLayer.Text); // Unit
+                dal1.SetUow(uow);
+                dal1.Add(cust1); // In memory
+
+                uow.Commit();
+            }
+            catch (Exception ex) { 
+                uow.Rollback();
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

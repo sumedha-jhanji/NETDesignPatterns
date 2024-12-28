@@ -108,3 +108,8 @@ D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\Quest
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\WindowcCustomer.genruntimeconfig.cache
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\obj\Debug\net8.0-windows\ref\WindowcCustomer.dll
 D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\WindowcCustomer.dll.config
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+D:\Study Material\Design Patterns\NETDesignPatterns\QuestpondDesignPattern\QuestpondDesignPattern_phase1\WindowcCustomer\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
