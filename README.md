@@ -593,7 +593,9 @@ public interface IUow
 }
 ```
 2. UOW will start a transaction and then inject that transaction object inside repository and wave all repositories into a centralized transaction
-![image](https://github.com/user-attachments/assets/6ae467d1-dde8-4f27-bdbb-1b03aaa9d03f)   ![image](https://github.com/user-attachments/assets/010728b9-205d-4e59-b865-7a362e347670)
+
+![image](https://github.com/user-attachments/assets/6ae467d1-dde8-4f27-bdbb-1b03aaa9d03f)   
+![image](https://github.com/user-attachments/assets/010728b9-205d-4e59-b865-7a362e347670)
 ```csharp
 For ADO.NET
   public class ADOUow : IUow
