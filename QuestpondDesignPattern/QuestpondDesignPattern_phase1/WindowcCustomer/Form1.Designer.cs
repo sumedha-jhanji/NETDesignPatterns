@@ -45,6 +45,7 @@
             dtgGridCustomer = new DataGridView();
             DalLayer = new ComboBox();
             btnUOW = new Button();
+            btnSavecustomer = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgGridCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -150,7 +151,7 @@
             // 
             // btnValidate
             // 
-            btnValidate.Location = new Point(74, 172);
+            btnValidate.Location = new Point(74, 156);
             btnValidate.Name = "btnValidate";
             btnValidate.Size = new Size(127, 23);
             btnValidate.TabIndex = 12;
@@ -160,9 +161,9 @@
             // 
             // addCustomer
             // 
-            addCustomer.Location = new Point(207, 172);
+            addCustomer.Location = new Point(74, 185);
             addCustomer.Name = "addCustomer";
-            addCustomer.Size = new Size(137, 23);
+            addCustomer.Size = new Size(127, 23);
             addCustomer.TabIndex = 13;
             addCustomer.Text = "Add Customer";
             addCustomer.UseVisualStyleBackColor = true;
@@ -183,22 +184,34 @@
             DalLayer.Name = "DalLayer";
             DalLayer.Size = new Size(121, 23);
             DalLayer.TabIndex = 15;
+            DalLayer.SelectedIndexChanged += DalLayer_SelectedIndexChanged;
             // 
             // btnUOW
             // 
-            btnUOW.Location = new Point(361, 172);
+            btnUOW.Location = new Point(207, 156);
             btnUOW.Name = "btnUOW";
-            btnUOW.Size = new Size(118, 23);
+            btnUOW.Size = new Size(127, 23);
             btnUOW.TabIndex = 16;
             btnUOW.Text = "Unit of Work";
             btnUOW.UseVisualStyleBackColor = true;
             btnUOW.Click += btnUOW_Click;
+            // 
+            // btnSavecustomer
+            // 
+            btnSavecustomer.Location = new Point(207, 185);
+            btnSavecustomer.Name = "btnSavecustomer";
+            btnSavecustomer.Size = new Size(127, 23);
+            btnSavecustomer.TabIndex = 17;
+            btnSavecustomer.Text = "Save Customer";
+            btnSavecustomer.UseVisualStyleBackColor = true;
+            btnSavecustomer.Click += btnSavecustomer_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnSavecustomer);
             Controls.Add(btnUOW);
             Controls.Add(DalLayer);
             Controls.Add(dtgGridCustomer);
@@ -243,5 +256,6 @@
         private DataGridView dtgGridCustomer;
         private ComboBox DalLayer;
         private Button btnUOW;
+        private Button btnSavecustomer;
     }
 }

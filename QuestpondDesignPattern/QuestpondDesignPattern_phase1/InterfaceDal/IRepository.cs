@@ -12,8 +12,12 @@ namespace InterfaceDal
         void SetUow(IUow uow);// used to send UOW inside this repository
         void Add(AnyType obj); // in memory  addition
         void Update(AnyType obj); // in-memory update
-        List<AnyType> Search();
 
+        //Design Pattern:- Iterator
+        IEnumerable<AnyType> Search(); // data base fetch
+
+        //Design Pattern:- Iterator
+        IEnumerable<AnyType> GetData(); // in-memory get
         void Save(); // physical commit
     }
 

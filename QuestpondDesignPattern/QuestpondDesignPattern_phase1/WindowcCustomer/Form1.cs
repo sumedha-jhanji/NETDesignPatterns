@@ -9,16 +9,51 @@ namespace WindowcCustomer
     public partial class Form1 : Form
     {
         private BaseCustomer _customer = null;
+        private IRepository<BaseCustomer> Idal;
 
         public Form1()
         {
             InitializeComponent();
+
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DalLayer.Items.Add("ADODal");
+            DalLayer.Items.Add("EFDal");
+            DalLayer.SelectedIndex = 0;
+            Idal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
+            LoadGrid();
+        }
+
+        //in-memory
+        private void LoadGridInMemory()
+        {
+            dtgGridCustomer.DataSource = null;
+            IEnumerable<BaseCustomer> custs = Idal.GetData();
+            dtgGridCustomer.DataSource = custs;
+        }
+
+        //physical data load
+        private void LoadGrid()
+        {
+            dtgGridCustomer.DataSource = null;
+            IEnumerable<BaseCustomer> custs = Idal.Search();
+            dtgGridCustomer.DataSource = custs;
         }
 
         private void cmbCustomerType_SelectedIndexChanged(object sender, EventArgs e)
         {
             //_customer = Factory.CreateCustomer(cmbCustomerType.Text);
             _customer = FactoryCustomer.FactoryUsingUnity<BaseCustomer>.CreateObject(cmbCustomerType.Text);
+        }
+
+        private void SetCustomer()
+        {
+            _customer.CustomerName = txtCustomerName.Text;
+            _customer.PhoneNumber = txtPhoneNumber.Text;
+            _customer.BillDate = Convert.ToDateTime(txtBillDate.Text);
+            _customer.BillAmount = Convert.ToDecimal(!String.IsNullOrEmpty(txtBillAmount.Text) ? txtBillAmount.Text: "0");
+            _customer.CustomerAddress = txtAddress.Text;
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
@@ -30,28 +65,33 @@ namespace WindowcCustomer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString());
             }
 
         }
 
-        private void SetCustomer()
-        {
-            _customer.CustomerName = txtCustomerName.Text;
-            _customer.PhoneNumber = txtPhoneNumber.Text;
-            _customer.BillDate = !string.IsNullOrEmpty(txtBillDate.Text) ? Convert.ToDateTime(txtBillDate.Text) : DateTime.Now;
-            _customer.BillAmount = !string.IsNullOrEmpty(txtBillAmount.Text) ? Convert.ToInt32(txtBillAmount.Text) : 0;
-            _customer.CustomerAddress = txtAddress.Text;
-        }
-
+        //in-memory
         private void addCustomer_Click(object sender, EventArgs e)
         {
-            SetCustomer();
-            IRepository<BaseCustomer> dal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
-            dal.Add(_customer); // in-memory
-            dal.Save();//physical commit
-            LoadGrid();
+            try
+            {
+                SetCustomer();
+                Idal.Add(_customer); // in-memory + Validate
+                LoadGridInMemory();
+                ClearCustomer();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        //physical Commit
+        private void btnSavecustomer_Click(object sender, EventArgs e)
+        {
+            Idal.Save();
             ClearCustomer();
+            LoadGrid();
         }
 
         private void ClearCustomer()
@@ -63,21 +103,6 @@ namespace WindowcCustomer
             txtAddress.Text = "";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            DalLayer.Items.Add("ADODal");
-            DalLayer.Items.Add("EFDal");
-            DalLayer.SelectedIndex = 0;
-            LoadGrid();
-
-        }
-        private void LoadGrid()
-        {
-            IRepository<BaseCustomer> Idal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
-            List<BaseCustomer> custs = Idal.Search();
-            dtgGridCustomer.DataSource = custs;
-
-        }
 
         private void btnUOW_Click(object sender, EventArgs e)
         {
@@ -108,10 +133,16 @@ namespace WindowcCustomer
 
                 uow.Commit();
             }
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 uow.Rollback();
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void DalLayer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         //   LoadGrid();
         }
     }
 }

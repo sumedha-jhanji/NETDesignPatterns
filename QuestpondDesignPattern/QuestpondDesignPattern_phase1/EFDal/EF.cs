@@ -23,13 +23,17 @@ namespace EFDal
             dbcont.Set<AnyType>().Add(obj);
         }
 
-       
+        public IEnumerable<AnyType> GetData()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save() 
         {
             dbcont.SaveChanges();// physical Commit
         }
 
-        public List<AnyType> Search()
+        public IEnumerable<AnyType> Search()
         {
             return dbcont.Set<AnyType>().AsQueryable<AnyType>().ToList<AnyType>();
         }

@@ -17,12 +17,17 @@ namespace CommonDAL
             AnyTypes.Add(obj);
         }
 
+        public IEnumerable<AnyType> GetData()
+        {
+            return AnyTypes;
+        }
+
         public virtual void Save()
         {
             throw new NotImplementedException();
         }
 
-        public virtual List<AnyType> Search()
+        public virtual IEnumerable<AnyType> Search()
         {
             throw new NotImplementedException();
         }

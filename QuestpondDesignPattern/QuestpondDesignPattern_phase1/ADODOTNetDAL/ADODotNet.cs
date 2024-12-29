@@ -4,6 +4,7 @@ using InterfaceCustomer;
 using InterfaceDal;
 using Microsoft.Data.SqlClient;
 using System.Configuration;
+using System.Data;
 namespace ADODOTNetDAL
 {
     //Design Pattern:- Template Pattern
@@ -27,7 +28,7 @@ namespace ADODOTNetDAL
 
         private void OpenConnection()
         {
-            if (objConn == null)
+            if (objConn == null || (objConn.State == ConnectionState.Closed))
             {
                 // objConn = new SqlConnection(ConnectionString); // when passing via a resolver in factory Dal
                 objConn = new SqlConnection(ConfigurationManager.
@@ -63,9 +64,9 @@ namespace ADODOTNetDAL
         {
             //fixed sequence
             OpenConnection();
-            List<AnyType> objTypes = ExecuteCommand();
+            AnyTypes = ExecuteCommand();
             CloseConnection();
-            return objTypes;
+            return AnyTypes;
 
         }
 
@@ -93,12 +94,19 @@ namespace ADODOTNetDAL
 
         //}
 
+        public override void Add(BaseCustomer obj)
+        {
+            obj.Validate(); // customer will get validated
+            base.Add(obj);
+        }
 
         protected override void ExecuteCommand(BaseCustomer obj)
         {
-            objComm.CommandText = "insert into tblCustomer(" +
+            if (obj.Id == 0)
+            {
+                objComm.CommandText = "insert into tblCustomer(" +
                                            "CustomerName," +
-                                           "BillAmount,"+
+                                           "BillAmount," +
                                             "BillDate," +
                                            "PhoneNumber," +
                                            "CustomerAddress,CustomerType)" +
@@ -107,7 +115,12 @@ namespace ADODOTNetDAL
                                            obj.BillDate + "','" +
                                            obj.PhoneNumber + "','" +
                                            obj.CustomerAddress + "','" + obj.CustomerType + "')";
-            objComm.ExecuteNonQuery();
+                objComm.ExecuteNonQuery();
+            }
+            else
+            {
+                // Update
+            }
         }
 
         protected override List<BaseCustomer> ExecuteCommand()
@@ -115,7 +128,7 @@ namespace ADODOTNetDAL
             objComm.CommandText = "select * from tblCustomer";
             SqlDataReader dr = null;
             dr = objComm.ExecuteReader();
-            List<BaseCustomer> custs = new List<BaseCustomer>();
+            AnyTypes.Clear();
             while (dr.Read())
             {
                 BaseCustomer icust = FactoryUsingUnity<BaseCustomer>.CreateObject("Customer");
@@ -126,9 +139,9 @@ namespace ADODOTNetDAL
                 icust.BillAmount = Convert.ToDecimal(dr["BillAmount"]);
                 icust.PhoneNumber = dr["PhoneNumber"].ToString();
                 icust.CustomerAddress = dr["CustomerAddress"].ToString();
-                custs.Add(icust);
+                AnyTypes.Add(icust);
             }
-            return custs;
+            return AnyTypes;
         }
     }
 
