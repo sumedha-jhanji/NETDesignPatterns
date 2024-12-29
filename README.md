@@ -877,7 +877,14 @@ public static AnyType CreateObject(string Type) // make it generic
 ```
 
 - Decorator pattern can be made more dynamic using COR or builder pattern. 
-  
+
+## Iterator Pattern
+- GOF pattern, cna be implemented automatically by using regualr APIs provided by .NET
+- provides a ay to access the elements  of an object sequentially without exposing its underlying  representation
+- Say we have a method that is returing a list. It is possible that user can manipulate that list and it migt result in wrong data. So here comes Iterator pattern which can only allow to iterate the list not manipulate.
+- To implement iterator pattern, we have 2 avaiable interfaces: IEnumerable and iEnumerator
+
+
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
 
