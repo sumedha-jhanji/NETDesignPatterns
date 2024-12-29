@@ -884,6 +884,41 @@ public static AnyType CreateObject(string Type) // make it generic
 - Say we have a method that is returing a list. It is possible that user can manipulate that list and it migt result in wrong data. So here comes Iterator pattern which can only allow to iterate the list not manipulate.
 - To implement iterator pattern, we have 2 avaiable interfaces: IEnumerable and iEnumerator
 
+## Prototype and Mememto Pattern
+- prototype is creating a copy of object
+- **Type**
+- Shallow Cloning: focus on breadth rather than depth, demonstrating a wide range of features at a high level without delving deeply into the specifics or functionalities of each feature.
+- Deep Cloning: can be interpreted as a highly detailed and comprehensive prototype that closely mimics the final product
+
+- **Step** create a clone
+```csharp
+_OldCopy = (ICustomer)this.MemberwiseClone();
+```
+
+- Momemto:
+- is a behavioral design pattern that provides a way to capture and externalize an object's internal state so that the object can be restored to this state later, without violating encapsulation.
+- It's useful for implementing undo mechanisms.
+- **Key Components:**
+- Originator: The object whose state needs to be saved and restored.
+- Memento: The object that stores the state of the Originator. It provides no methods to modify the state.
+- Caretaker: The object that holds and manages the Memento. It requests a save from the Originator, and restores the Originator's state from the Memento.
+  
+- **steps**
+```csharp
+// Design pattern :- memento pattern ( Revert old state)
+private ICustomer _OldCopy = null;
+
+// Design pattern :- memento pattern ( Revert old state)
+public void Revert()
+{
+    this.CustomerName = _OldCopy.CustomerName;
+    this.CustomerAddress = _OldCopy.CustomerAddress;
+    this.BillDate = _OldCopy.BillDate;
+    this.BillAmount = _OldCopy.BillAmount;
+    this.CustomerType = _OldCopy.CustomerType;
+    this.PhoneNumber = _OldCopy.PhoneNumber;
+}
+```   
 
 ## Advantages of SOLIP principles over OOPs
 - The SOLID principles complement Object-Oriented Programming (OOP) by providing a set of guidelines to create more robust, maintainable, and scalable software. While OOP offers a powerful foundation for software design, incorporating SOLID principles enhances the effectiveness of OOP. Here are the advantages of using SOLID principles over traditional OOP:
