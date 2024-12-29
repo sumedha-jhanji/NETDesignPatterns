@@ -46,6 +46,7 @@
             DalLayer = new ComboBox();
             btnUOW = new Button();
             btnSavecustomer = new Button();
+            btnCancel = new Button();
             ((System.ComponentModel.ISupportInitialize)dtgGridCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -165,7 +166,7 @@
             addCustomer.Name = "addCustomer";
             addCustomer.Size = new Size(127, 23);
             addCustomer.TabIndex = 13;
-            addCustomer.Text = "Add Customer";
+            addCustomer.Text = "Add/Update Customer";
             addCustomer.UseVisualStyleBackColor = true;
             addCustomer.Click += addCustomer_Click;
             // 
@@ -176,6 +177,7 @@
             dtgGridCustomer.Name = "dtgGridCustomer";
             dtgGridCustomer.Size = new Size(689, 216);
             dtgGridCustomer.TabIndex = 14;
+            dtgGridCustomer.RowEnter += dtgGridCustomer_RowEnter;
             // 
             // DalLayer
             // 
@@ -184,7 +186,6 @@
             DalLayer.Name = "DalLayer";
             DalLayer.Size = new Size(121, 23);
             DalLayer.TabIndex = 15;
-            DalLayer.SelectedIndexChanged += DalLayer_SelectedIndexChanged;
             // 
             // btnUOW
             // 
@@ -206,11 +207,22 @@
             btnSavecustomer.UseVisualStyleBackColor = true;
             btnSavecustomer.Click += btnSavecustomer_Click;
             // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(344, 187);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 18;
+            btnCancel.Text = "Cancel Customer";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCancel);
             Controls.Add(btnSavecustomer);
             Controls.Add(btnUOW);
             Controls.Add(DalLayer);
@@ -257,5 +269,6 @@
         private ComboBox DalLayer;
         private Button btnUOW;
         private Button btnSavecustomer;
+        private Button btnCancel;
     }
 }

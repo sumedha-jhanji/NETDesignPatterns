@@ -32,7 +32,7 @@ namespace FactoryCustomer
                 objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("HomeDelivery", new InjectionConstructor(custValidate, "Home Delivery"));
 
 
-                custValidate = new CustomerBillValidation(new CustomerBillValidation(new PhoneValidation(new CustomerBasicValidation())));
+                custValidate = new CustomerAddressValidation(new CustomerBillValidation(new PhoneValidation(new CustomerBasicValidation())));
                 objectsOfOurProjects.RegisterType<BaseCustomer, OrgCustomer>("Customer", new InjectionConstructor(custValidate, "Customer"));
             }
 

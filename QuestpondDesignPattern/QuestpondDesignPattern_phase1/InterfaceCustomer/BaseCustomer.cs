@@ -5,6 +5,9 @@ namespace InterfaceCustomer
     public class BaseCustomer : ICustomer
     {
         private IValidation<ICustomer> _validation = null;
+
+        // Design pattern :- memento pattern ( Revert old state)
+        private ICustomer _OldCopy = null;
         public BaseCustomer(IValidation<ICustomer> obj) // injecting validation object
         {
             _validation = obj;
@@ -31,6 +34,28 @@ namespace InterfaceCustomer
         public virtual void Validate()
         {
             _validation.Validate(this);
+        }
+
+        public void Clone()
+        {
+            if (_OldCopy == null)
+            {
+                // Design pattern :- Prototype pattern (Clone)
+                //_OldCopy = this; // clone urself first. This is happening "BYREF". Change in current object will also imapct old copy also
+                _OldCopy = (ICustomer)this.MemberwiseClone(); // this will do BYVAL. copies all the values and create a new copy
+            }
+            
+        }
+
+        // Design pattern :- memento pattern ( Revert old state)
+        public void Revert()
+        {
+            this.CustomerName = _OldCopy.CustomerName;
+            this.CustomerAddress = _OldCopy.CustomerAddress;
+            this.BillDate = _OldCopy.BillDate;
+            this.BillAmount = _OldCopy.BillAmount;
+            this.CustomerType = _OldCopy.CustomerType;
+            this.PhoneNumber = _OldCopy.PhoneNumber;
         }
     }
 }

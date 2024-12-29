@@ -22,6 +22,7 @@ namespace WindowcCustomer
             DalLayer.Items.Add("EFDal");
             DalLayer.SelectedIndex = 0;
             Idal = FactoryDal.FactoryUsingUnity<IRepository<BaseCustomer>>.CreateObject(DalLayer.Text);
+            dtgGridCustomer.ClearSelection();
             LoadGrid();
         }
 
@@ -52,7 +53,7 @@ namespace WindowcCustomer
             _customer.CustomerName = txtCustomerName.Text;
             _customer.PhoneNumber = txtPhoneNumber.Text;
             _customer.BillDate = Convert.ToDateTime(txtBillDate.Text);
-            _customer.BillAmount = Convert.ToDecimal(!String.IsNullOrEmpty(txtBillAmount.Text) ? txtBillAmount.Text: "0");
+            _customer.BillAmount = Convert.ToDecimal(!String.IsNullOrEmpty(txtBillAmount.Text) ? txtBillAmount.Text : "0");
             _customer.CustomerAddress = txtAddress.Text;
         }
 
@@ -140,9 +141,30 @@ namespace WindowcCustomer
             }
         }
 
-        private void DalLayer_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void dtgGridCustomer_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-         //   LoadGrid();
+            _customer = Idal.GetData(e.RowIndex);
+            _customer.Clone();
+            LoadCustomerOnUI();
+        }
+
+        private void LoadCustomerOnUI()
+        {
+            txtAddress.Text = _customer.CustomerAddress;
+            txtBillAmount.Text = _customer.BillAmount.ToString();
+            txtBillDate.Text = _customer.BillDate.ToString();
+            txtCustomerName.Text = _customer.CustomerName;
+            txtPhoneNumber.Text = _customer.PhoneNumber;
+            cmbCustomerType.Text = _customer.CustomerType;
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            _customer.Revert();
+            ClearCustomer();
+            LoadGridInMemory();
         }
     }
 }

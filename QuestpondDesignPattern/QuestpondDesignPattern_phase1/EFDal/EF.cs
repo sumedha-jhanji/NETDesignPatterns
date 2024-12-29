@@ -28,6 +28,11 @@ namespace EFDal
             throw new NotImplementedException();
         }
 
+        public AnyType GetData(int Index)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Save() 
         {
             dbcont.SaveChanges();// physical Commit
